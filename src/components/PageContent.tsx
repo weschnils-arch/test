@@ -50,17 +50,10 @@ export default function PageContent({ variant }: Props) {
         { text: '2009', color: 'var(--color-bg)' },
       ]
 
-  const aboutText = isDark
-    ? { before: "I'm a ", highlight: 'selectively skilled', after: ' product designer with strong focus on producing high quality & impactful digital experience.' }
-    : { before: '', highlight: '', after: "A visual designer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good." }
-
-  const expText = isDark
-    ? { before: 'Over ', highlight: 'a decade', after: ' of experience in interactive design and working with some of the most talented people in the business' }
-    : { before: '', highlight: '', after: 'Only seven years of actively producing cool shit. Other years were me messing around and navigating through my career.' }
-
-  const clientText = isDark
-    ? { before: 'I worked with some of the most ', highlight: 'innovative', after: ' industry leaders to help build their top-notch products' }
-    : { before: '', highlight: '', after: 'I was only a small part of a large team. They probably have no idea I exist.' }
+  // Section descriptions MUST be identical in both layers to maintain same heights
+  const aboutText = { before: "I'm a ", highlight: 'selectively skilled', after: ' product designer with strong focus on producing high quality & impactful digital experience.' }
+  const expText = { before: 'Over ', highlight: 'a decade', after: ' of experience in interactive design and working with some of the most talented people in the business' }
+  const clientText = { before: 'I worked with some of the most ', highlight: 'innovative', after: ' industry leaders to help build their top-notch products' }
 
   // Skills — descriptions are the SAME for both layers
   const skills = [
