@@ -46,10 +46,8 @@ export default function App() {
     smoothPos.current.y = lerp(smoothPos.current.y, mousePos.current.y, 0.08)
 
     const root = document.documentElement
-    // Viewport coords for cursor ring
     root.style.setProperty('--cursor-x', `${smoothPos.current.x}px`)
     root.style.setProperty('--cursor-y', `${smoothPos.current.y}px`)
-    // Page coords for mask (viewport + scroll offset)
     root.style.setProperty('--mask-x', `${smoothPos.current.x}px`)
     root.style.setProperty('--mask-y', `${smoothPos.current.y + window.scrollY}px`)
 
@@ -69,11 +67,11 @@ export default function App() {
     }
   }, [updateCursor])
 
-  // GSAP animations after start
+  // GSAP animations — ONLY on dark layer. Red layer stays at final state.
   useEffect(() => {
     if (!started) return
 
-    // Hero char-by-char reveal
+    // Hero char-by-char reveal (dark layer only)
     const heroChars = document.querySelectorAll('.layer-dark .hero-char')
     gsap.fromTo(
       heroChars,
@@ -88,29 +86,14 @@ export default function App() {
       }
     )
 
-    // Red layer chars (immediate, no animation needed — they mirror)
-    const redChars = document.querySelectorAll('.layer-red .hero-char')
+    // Hero label (both layers since it's small)
     gsap.fromTo(
-      redChars,
-      { y: '105%', opacity: 0 },
-      {
-        y: '0%',
-        opacity: 1,
-        duration: 1.4,
-        stagger: 0.02,
-        ease: 'power3.out',
-        delay: 0.3,
-      }
-    )
-
-    // Hero label
-    gsap.fromTo(
-      '.hero-label-inner',
+      '.layer-dark .hero-label-inner',
       { y: '105%', opacity: 0 },
       { y: '0%', opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
     )
 
-    // Scroll reveals — only animate dark layer, red mirrors via position
+    // Scroll reveals — dark layer only
     const revealElements = document.querySelectorAll('.layer-dark .scroll-reveal')
     revealElements.forEach((el) => {
       gsap.fromTo(
@@ -130,29 +113,7 @@ export default function App() {
       )
     })
 
-    // Also animate red layer reveals in sync
-    const redReveals = document.querySelectorAll('.layer-red .scroll-reveal')
-    redReveals.forEach((el, i) => {
-      const darkEl = revealElements[i]
-      if (!darkEl) return
-      gsap.fromTo(
-        el,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: darkEl,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        }
-      )
-    })
-
-    // Client name char reveals
+    // Client name char reveals — dark layer only
     const scrollSplits = document.querySelectorAll('.layer-dark .scroll-split')
     scrollSplits.forEach((el) => {
       const chars = el.querySelectorAll('.char')
@@ -167,30 +128,6 @@ export default function App() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: el,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        }
-      )
-    })
-
-    // Mirror for red layer
-    const redSplits = document.querySelectorAll('.layer-red .scroll-split')
-    redSplits.forEach((el, i) => {
-      const darkEl = scrollSplits[i]
-      if (!darkEl) return
-      const chars = el.querySelectorAll('.char')
-      gsap.fromTo(
-        chars,
-        { y: '105%', opacity: 0 },
-        {
-          y: '0%',
-          opacity: 1,
-          duration: 1.2,
-          stagger: 0.015,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: darkEl,
             start: 'top 85%',
             toggleActions: 'play none none none',
           },
