@@ -101,7 +101,7 @@
 /* ========== TYPOGRAPHY ========== */
 .heading-xl {
   font-family: var(--font-primary);
-  font-size: clamp(48px, 11vw, 160px);
+  font-size: clamp(40px, 8.5vw, 130px);
   font-weight: 800;
   line-height: 0.88;
   letter-spacing: -0.05em;
