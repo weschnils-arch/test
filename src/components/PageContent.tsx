@@ -87,6 +87,7 @@ export default function PageContent({ variant }: Props) {
     { name: 'NFL', desc: 'Explored the Future of Fantasy Football while being in a country where football means a total different sport.' },
   ]
 
+  // Testimonials: use fixed min-height per item so different text lengths don't shift layout
   const testimonials = isDark
     ? [
         { quote: 'Minh is seriously the best and he never complains', author: 'Michael Glass', role: 'Group Design Director, Fantasy Interactive', img: michaelImg },
@@ -99,10 +100,9 @@ export default function PageContent({ variant }: Props) {
         { quote: "I'm his wife, he made me say that", author: 'Linh Le', role: 'Project Manager, Interactive Labs', img: linhImg },
       ]
 
+  // Motto: same line structure both layers to keep height identical
   const mottoLabel = isDark ? 'MY MOTTO' : 'MY MOTO'
-  const mottoText = isDark
-    ? { line1: 'GOOD', line2: 'DESIGN IS', line3: 'HONEST' }
-    : { line1: 'NOT ALL', line2: 'HONEST DESIGN', line3: 'IS GOOD' }
+  const mottoQuote = isDark ? '"GOOD DESIGN IS HONEST"' : '"NOT ALL HONEST DESIGN IS GOOD"'
   const mottoAuthor = isDark ? '— Dieter Rams' : '— Minh Pham'
 
   // Contact — red layer shows descriptions instead of names
@@ -421,11 +421,7 @@ export default function PageContent({ variant }: Props) {
           </div>
           <div className="scroll-reveal">
             <h2 className="heading-xl" style={{ color: textColor }}>
-              &ldquo;{mottoText.line1}
-              <br />
-              {mottoText.line2}
-              <br />
-              {mottoText.line3}&rdquo;
+              {mottoQuote}
             </h2>
           </div>
           <div className="scroll-reveal" style={{ marginTop: '24px' }}>

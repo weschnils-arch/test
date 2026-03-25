@@ -630,6 +630,7 @@
 .testimonial-item {
   margin-bottom: clamp(60px, 8vw, 120px);
   max-width: 720px;
+  min-height: clamp(200px, 25vw, 350px);
 }
 
 .testimonial-quote-mark {
