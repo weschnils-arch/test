@@ -305,10 +305,10 @@ export default function PageContent({ variant }: Props) {
             alt=""
             style={{
               position: 'absolute',
-              right: '-5%',
-              top: '10%',
-              width: '50%',
-              maxWidth: '500px',
+              right: '-10%',
+              top: '-5%',
+              width: '70%',
+              maxWidth: '700px',
               opacity: isDark ? 0.5 : 0.25,
               filter: isDark ? 'grayscale(100%) brightness(0.5)' : 'grayscale(100%) brightness(0.2)',
               pointerEvents: 'none',

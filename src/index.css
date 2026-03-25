@@ -372,6 +372,7 @@
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  gap: 24px;
 }
 
 .skill-row::before {
@@ -402,7 +403,8 @@
 .skill-desc {
   position: relative;
   z-index: 1;
-  max-width: 280px;
+  max-width: 250px;
+  flex-shrink: 0;
   text-align: right;
   opacity: 0;
   transform: translateY(10px);
@@ -516,7 +518,7 @@
 }
 
 .clients-list {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .client-name {
