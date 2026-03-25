@@ -100,10 +100,10 @@ export default function PageContent({ variant }: Props) {
         { quote: "I'm his wife, he made me say that", author: 'Linh Le', role: 'Project Manager, Interactive Labs', img: linhImg },
       ]
 
-  // Motto: same line structure both layers to keep height identical
-  const mottoLabel = isDark ? 'MY MOTTO' : 'MY MOTO'
-  const mottoQuote = isDark ? '"GOOD DESIGN IS HONEST"' : '"NOT ALL HONEST DESIGN IS GOOD"'
-  const mottoAuthor = isDark ? '— Dieter Rams' : '— Minh Pham'
+  // Motto: identical text both layers to maintain alignment
+  const mottoLabel = 'MY MOTTO'
+  const mottoQuote = '"GOOD DESIGN IS HONEST"'
+  const mottoAuthor = '— Dieter Rams'
 
   // Contact — red layer shows descriptions instead of names
   const contactLeft = isDark
