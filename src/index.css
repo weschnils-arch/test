@@ -300,6 +300,7 @@
 .section {
   position: relative;
   padding: 0 var(--screen-x);
+  overflow: hidden;
 }
 
 .section-hero {
@@ -403,7 +404,7 @@
 .skill-desc {
   position: relative;
   z-index: 1;
-  max-width: 250px;
+  max-width: 220px;
   flex-shrink: 0;
   text-align: right;
   opacity: 0;
@@ -564,11 +565,13 @@
 }
 
 .client-desc {
-  max-width: 280px;
+  max-width: 220px;
+  flex-shrink: 0;
   text-align: right;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease, color 0.4s ease;
+  padding-right: var(--screen-x);
 }
 
 @media (max-width: 767px) {
