@@ -89,6 +89,15 @@
   }
 }
 
+/* Red layer: everything always visible and at final position */
+.layer-red .scroll-reveal,
+.layer-red .hero-char,
+.layer-red .hero-label-inner,
+.layer-red .char {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* ========== TYPOGRAPHY ========== */
 .heading-xl {
   font-family: var(--font-primary);
@@ -314,13 +323,7 @@
 }
 
 .hero-text-col {
-  max-width: 33.33%;
-}
-
-@media (max-width: 767px) {
-  .hero-text-col {
-    max-width: 66.67%;
-  }
+  white-space: nowrap;
 }
 
 .hero-label {

@@ -93,14 +93,13 @@ export default function App() {
       { y: '0%', opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
     )
 
-    // Scroll reveals — dark layer only
+    // Scroll reveals — dark layer only, opacity-only (no Y offset to keep layers aligned)
     const revealElements = document.querySelectorAll('.layer-dark .scroll-reveal')
     revealElements.forEach((el) => {
       gsap.fromTo(
         el,
-        { y: 60, opacity: 0 },
+        { opacity: 0 },
         {
-          y: 0,
           opacity: 1,
           duration: 1,
           ease: 'power3.out',
