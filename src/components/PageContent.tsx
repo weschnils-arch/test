@@ -1,3 +1,4 @@
+import heroVideo from '../assets/video/hero.mp4'
 import heroImg from '../assets/images/work.jpg'
 import bannerImg from '../assets/images/banner-bottom.jpg'
 import planetImg from '../assets/images/planet-1-1.png'
@@ -143,23 +144,19 @@ export default function PageContent({ variant }: Props) {
       {/* ==================== HERO ==================== */}
       <section className="section section-hero" id={isDark ? 'hero' : undefined}>
         <div className="hero-bg">
-          <img
-            src={heroImg}
-            alt=""
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '60%',
-              maxWidth: '700px',
-              height: 'auto',
-              objectFit: 'cover',
-              opacity: isDark ? 0.4 : 0.3,
-              filter: isDark ? 'grayscale(100%) brightness(0.5)' : 'grayscale(100%) brightness(0.3)',
-              pointerEvents: 'none',
+              opacity: isDark ? 1 : 0.3,
+              filter: isDark ? 'none' : 'brightness(0.3)',
             }}
-          />
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
         </div>
         <div className="hero-label line-reveal" style={{ position: 'relative', zIndex: 2 }}>
           <span className="heading-sm hero-label-inner label-text" style={{ color: mutedColor, display: 'block' }}>
