@@ -11,7 +11,7 @@ export default function LoadingScreen({ onComplete, onStart, loaded }: Props) {
   const [showButton, setShowButton] = useState(false)
   const [hidden, setHidden] = useState(false)
   const circleRef = useRef<SVGCircleElement>(null)
-  const circumference = 2 * Math.PI * 36 // r=36
+  const circumference = 2 * Math.PI * 36
 
   useEffect(() => {
     let current = 0
@@ -43,6 +43,7 @@ export default function LoadingScreen({ onComplete, onStart, loaded }: Props) {
 
   return (
     <div className={`loading-screen ${hidden ? 'hidden' : ''}`}>
+      {/* Dark layer content */}
       <div className="loading-progress">
         <svg viewBox="0 0 80 80">
           <circle
@@ -65,6 +66,35 @@ export default function LoadingScreen({ onComplete, onStart, loaded }: Props) {
       >
         Start
       </button>
+
+      {/* Red overlay that follows cursor */}
+      <div className="loading-red-layer">
+        <div className="loading-progress">
+          <svg viewBox="0 0 80 80">
+            <circle
+              cx="40"
+              cy="40"
+              r="36"
+              strokeDasharray={circumference}
+              strokeDashoffset={circumference - (progress / 100) * circumference}
+              style={{ stroke: '#0d0d0d' }}
+            />
+          </svg>
+        </div>
+        <div className="loading-percent" style={{ color: '#0d0d0d' }}>
+          {String(progress).padStart(2, '0')}%
+        </div>
+        <button
+          className={`loading-start ${showButton ? 'visible' : ''}`}
+          style={{
+            borderColor: '#0d0d0d',
+            color: '#0d0d0d',
+          }}
+          tabIndex={-1}
+        >
+          Start
+        </button>
+      </div>
     </div>
   )
 }

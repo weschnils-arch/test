@@ -88,18 +88,12 @@ export default function PageContent({ variant }: Props) {
     { name: 'NFL', desc: 'Explored the Future of Fantasy Football while being in a country where football means a total different sport.' },
   ]
 
-  // Testimonials: use fixed min-height per item so different text lengths don't shift layout
-  const testimonials = isDark
-    ? [
-        { quote: 'Minh is seriously the best and he never complains', author: 'Michael Glass', role: 'Group Design Director, Fantasy Interactive', img: michaelImg },
-        { quote: 'This looks amazing. Great work!', author: 'Peter Smart', role: 'Head of Product, Fantasy Interactive', img: peterImg },
-        { quote: "He's a beast. His skills are insane!", author: 'Linh Le', role: 'Project Manager, Interactive Labs', img: linhImg },
-      ]
-    : [
-        { quote: "He's terrible, but it's his birthday so I'd say something nice", author: 'Michael Glass', role: 'Group Design Director, Fantasy Interactive', img: michaelImg },
-        { quote: 'After countless rounds of feedback, you finally did it right', author: 'Peter Smart', role: 'Head of Product, Fantasy Interactive', img: peterImg },
-        { quote: "I'm his wife, he made me say that", author: 'Linh Le', role: 'Project Manager, Interactive Labs', img: linhImg },
-      ]
+  // Testimonials: identical in both layers to maintain perfect alignment
+  const testimonials = [
+    { quote: 'Minh is seriously the best and he never complains', author: 'Michael Glass', role: 'Group Design Director, Fantasy Interactive', img: michaelImg },
+    { quote: 'This looks amazing. Great work!', author: 'Peter Smart', role: 'Head of Product, Fantasy Interactive', img: peterImg },
+    { quote: "He's a beast. His skills are insane!", author: 'Linh Le', role: 'Project Manager, Interactive Labs', img: linhImg },
+  ]
 
   // Motto: identical text both layers to maintain alignment
   const mottoLabel = 'MY MOTTO'
