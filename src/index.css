@@ -174,6 +174,11 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;
+  cursor: none;
+}
+
+.loading-screen * {
+  cursor: none !important;
 }
 
 .loading-screen.hidden {
@@ -280,7 +285,7 @@
 .nav-item {
   position: relative;
   overflow: hidden;
-  height: 1.3em;
+  height: 1.5em;
   padding: clamp(4px, 0.4vw, 6px) 0;
 }
 
