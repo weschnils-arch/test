@@ -316,6 +316,9 @@
 .section {
   position: relative;
   padding: 0 var(--screen-x);
+}
+
+.layer-dark .section {
   overflow: hidden;
 }
 
