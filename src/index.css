@@ -319,7 +319,7 @@
 }
 
 .layer-dark .section {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .section-hero {
@@ -432,12 +432,13 @@
 .skill-desc {
   position: relative;
   z-index: 1;
-  max-width: 220px;
+  max-width: 200px;
   flex-shrink: 0;
   text-align: right;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease, color 0.4s ease;
+  margin-right: var(--screen-x);
 }
 
 .skill-row:hover .skill-desc {
