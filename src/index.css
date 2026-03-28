@@ -29,7 +29,7 @@
   }
 
   ::selection {
-    background: #eb5939;
+    background: #39ff14;
     color: #0d0d0d;
   }
 }
@@ -38,7 +38,7 @@
 :root {
   --color-bg: #0d0d0d;
   --color-text: #b7ab98;
-  --color-accent: #eb5939;
+  --color-accent: #39ff14;
   --color-muted: rgba(184, 172, 153, 0.5);
   --color-border: hsla(37, 18%, 66%, 0.15);
   --color-gray: #4d4d4d;
